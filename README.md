@@ -102,15 +102,16 @@ cd acuvia/backend
 pipx install poetry # Alternative fallback: pip install poetry
 poetry install
 ```
-3. Prepare AI System Assets
+---
+2. Prepare AI System Assets
 Run the linguistic dependency utilities and seed generation vectors:
 
 Bash
-# Fetch essential text normalization dictionaries
+**Fetch essential text normalization dictionaries** 
 ```text
 poetry run python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4'); nltk.download('stopwords')"
 ```
-# Train the local engine and export standard serialized binary model binaries
+**Train the local engine and export standard serialized binary model binaries**
 ```text
 poetry run python -m app.ai.train
 ```
@@ -120,7 +121,7 @@ poetry run python -m app.ai.train
 Map your standard environmental credentials into your untracked root .env file matching the database config layer, then run migrations:
 
 Bash
-# Apply structural delta mutations down to target active database
+ **Apply structural delta mutations down to target active database**
 ```text
 poetry run alembic upgrade head
 ```
@@ -130,6 +131,7 @@ Bash
 poetry run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 Local Interactive Documentation Swagger UI: http://localhost:8000/docs
+
 ---
 
 ## 📱 Frontend Setup (Flutter)
@@ -150,12 +152,12 @@ flutter pub run build_runner build --delete-conflicting-outputs
 Ensure you have an active emulator running, a web window, or a physical smartphone debugging node attached:
 
 Bash
-# Verify active listening processing engine nodes
+**Verify active listening processing engine nodes**
 ```
 flutter devices
 ```
 
-# Compile layout and launch code in hot-reload debug mode
+**Compile layout and launch code in hot-reload debug mode**
 ```
 flutter run
 ```
