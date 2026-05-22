@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # Backend service running FastAPI
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      # When running in docker-compose the DB host should point to the postgres service
+      - POSTGRES_HOST=db
+    depends_on:
+      - db
+
+  # Postgres database for local development
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=acuvia
+      - POSTGRES_PASSWORD=acuvia
+      - POSTGRES_DB=acuvia
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+    name: acuvia_db_data

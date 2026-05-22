@@ -12,7 +12,12 @@ class Settings(BaseSettings):
     POSTGRES_DB: str = "acuvia"
     POSTGRES_USER: str = "acuvia"
     POSTGRES_PASSWORD: str = "acuvia"
-    CORS_ORIGINS: list[str] = ["[localhost](http://localhost:3000)", "[localhost](http://localhost:5173)", "[localhost](http://localhost:8080)", "[localhost](http://localhost:8000)"]
+    CORS_ORIGINS: list[str] = [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:8080",
+        "http://localhost:8000",
+    ]
     ENV: str = "dev"
 
     class Config:
