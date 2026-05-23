@@ -4,7 +4,10 @@ part 'user.freezed.dart';
 part 'user.g.dart';
 
 @freezed
-class User with _$User { // ignore: non_abstract_class_inherits_abstract_member
+abstract class User with _$User {
+  // This private constructor is the secret sauce Freezed needs!
+  const User._();
+
   const factory User({
     required int id,
     required String email,

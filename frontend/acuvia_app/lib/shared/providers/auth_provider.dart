@@ -42,6 +42,23 @@ class AuthController extends StateNotifier<AsyncValue<void>> {
       state = AsyncValue.error(e, st);
       return false;
     }
+  } // <-- This is the bracket I moved to close out the register function!
+
+  /// Placeholder Google sign-in flow. Integrate `google_sign_in` or
+  /// your platform-specific implementation and exchange the provider token
+  /// with your backend to retrieve an auth token.
+  Future<bool> signInWithGoogle() async {
+    state = const AsyncValue.loading();
+    try {
+      // TODO: replace this placeholder with a real Google Sign-In flow.
+      // For now, we emulate a failure so callers can handle the result.
+      await Future.delayed(const Duration(milliseconds: 500));
+      state = const AsyncValue.data(null);
+      return false;
+    } catch (e, st) {
+      state = AsyncValue.error(e, st);
+      return false;
+    }
   }
 
   void logout() {

@@ -77,6 +77,23 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
+  assets:
+    - assets/acuvia_logo.png
+    - assets/google 1.png
+    - assets/guy on phone.png
+    - assets/Home.png
+    - assets/Clipboard.png
+    - assets/Book open.png
+    - assets/person.png
+    - assets/temperature 1.png
+    - assets/headache 1.png
+    - assets/heart 1.png
+    - assets/lungs 1.png
+    - assets/nausea 1.png
+    - assets/dizziness 1.png
+    - assets/other.png
+    - .env
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
